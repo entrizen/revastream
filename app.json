@@ -1,0 +1,140 @@
+{
+  "name": "Stream Bot Telegram",
+  "description": "Sebuah bot yang dibuat untuk streaming musik dan video di Voice Chat Telegram, dibuat dengan Pyrogram dan Py-Tgcalls.",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  "keywords": [
+  "python3",
+  "telegram",
+  "bot",
+  "StreamingVideoBot",
+  "StreamingMusicBot",
+  "telegram-bot",
+  "pyrogram"
+  ],
+  "stack": "container",
+  "env": {
+    "API_ID": {
+      "description": "Dapatkan ini di https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Dapatkan ini di https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Bot token mu, dapatkan di Botfather",
+      "value": "",
+      "required": true
+    },
+    "DURATION_LIMIT": {
+      "description": "Batas durasi streaming (menit), contoh 60",
+      "value": "",
+      "required": true
+    },
+    "ASSISTANT_PREFIX": {
+      "description": "Perintah handler untuk akun asisten.",
+      "value": ".",
+      "required": true
+    },
+    "MONGO_DB_URI": {
+      "description": " Link Database Mongo DB",
+      "value": "",
+      "required": true
+    },
+    "MUSIC_BOT_NAME": {
+      "description": "Nama Bot yang kamu buat.",
+      "value": "",
+      "required": true
+    },
+    "SUPPORT_CHANNEL": {
+      "description": "Channel Support",
+      "value": "",
+      "required": false
+    },
+    "SUPPORT_GROUP": {
+      "description": "Grup Support",
+      "value": "",
+      "required": false
+    },
+    "OWNER_ID": {
+      "description": "ID Pemilik Bot",
+      "value": "",
+      "required": true
+    },
+    "STRING_SESSION1": {
+      "description": "Pyrogram String Session.",
+      "value": "",
+      "required": true
+    },
+    "STRING_SESSION2": {
+      "description": "Pyrogram String Session.",
+      "value": "",
+      "required": false
+    },
+    "STRING_SESSION3": {
+      "description": "Pyrogram String Session.",
+      "value": "",
+      "required": false
+    },
+    "STRING_SESSION4": {
+      "description": "Pyrogram String Session.",
+      "value": "",
+      "required": false
+    },
+    "STRING_SESSION5": {
+      "description": "Pyrogram String Session.",
+      "value": "",
+      "required": false
+    },
+    "HEROKU_API_KEY": {
+      "description": "Heroku API KEY",
+      "value": "",
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Nama App di Heroku",
+      "value": "",
+      "required": false
+    },
+    "LOG_GROUP_ID": {
+      "description": "ID Grup Logs",
+      "value": "",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "ID Sudo User",
+      "value": "",
+      "required": true
+    },
+    "UPSTREAM_REPO": {
+      "description": "Upstream Deployed Repository",
+      "value": "",
+      "required": true
+    },
+    "UPSTREAM_BRANCH": {
+      "description": "Repo's Branch Name",
+      "value": "master",
+      "required": true
+    }
+  },
+  "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    },
+    "stack": "container"
+}
